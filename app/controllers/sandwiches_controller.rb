@@ -3,9 +3,17 @@ class SandwichesController < ApplicationController
 
   # GET /sandwiches
   def index
+
+    random = rand(1..3)
+
+    puts random
+
+    raise ActionController::NoMemoryError unless random.odd?
+
     @sandwiches = Sandwich.all
 
     render json: @sandwiches
+
   end
 
   # GET /sandwiches/1
