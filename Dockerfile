@@ -7,5 +7,5 @@ ADD Gemfile.lock /myapp/Gemfile.lock
 RUN bundle install
 ADD . /myapp
 RUN /myapp/bin/rails db:drop db:setup db:migrate db:seed
-EXPOSE 3000
+EXPOSE 80
 CMD ["/myapp/bin/rails", "s"]
